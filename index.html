@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Burden Logic - Artisan Version</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .container {
+            border: 1px solid #333;
+            padding: 2rem;
+            border-radius: 12px;
+            background: #1e1e1e;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+        .status-box {
+            font-size: 1.5rem;
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+        .carrying { color: #ffab40; background: rgba(255, 171, 64, 0.1); }
+        .released { color: #69f0ae; background: rgba(105, 240, 174, 0.1); }
+        
+        button {
+            padding: 12px 24px;
+            font-size: 1rem;
+            cursor: pointer;
+            background-color: #e0e0e0;
+            border: none;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+        button:hover { background-color: #bdbdbd; }
+        .insight { font-style: italic; color: #888; margin-top: 15px; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>The Burden Logic</h1>
+        <p><i>"In Short, withholding the Mind and Body is true heavy weights."</i></p>
+        
+        <div id="display" class="status-box carrying">
+            Current State: 🚧 CARRYING
+        </div>
+
+        <p id="insight-text" class="insight">Insight: Withholding the Mind and Body is true heavy weights.</p>
+        
+        <button id="action-btn" onclick="lettingGo()">Put Down the Weight</button>
+    </div>
+
+    <script>
+        function lettingGo() {
+            const display = document.getElementById('display');
+            const insight = document.getElementById('insight-text');
+            const btn = document.getElementById('action-btn');
+
+            // Toggle logic for demonstration
+            display.innerHTML = "Current State: 🍃 RELEASED";
+            display.className = "status-box released";
+            insight.innerHTML = "Insight: Absolute Freedom through letting go.";
+            
+            btn.style.display = "none"; // Once released, the button disappears
+        }
+    </script>
+
+</body>
+</html>
